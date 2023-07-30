@@ -5,12 +5,3 @@ namespace: test
 resources:
   - ../common
   - hpa.yaml
-patches:
-  - target:
-      version: v1
-      kind: Deployment
-      name: testdeploy
-    patch: |-
-      - op: replace
-        path: /metadata/name
-        value: pod1

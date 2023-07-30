@@ -11,7 +11,7 @@ spec:
   scaleTargetRef:
     kind: Deployment
     apiVersion: apps/v1
-    name: pod1
+    name: testdeploy
   metrics:
   - type: Resource
     resource:
