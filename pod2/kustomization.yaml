@@ -1,0 +1,18 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: test
+resources:
+  - ../common
+patches:
+  - target:
+      version: v1
+      kind: Deployment
+      name: testdeploy
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: pod2
+      - op: add
+        path: /spec/template/spec/containers/0/env
+        value: [{"name": "TRANSMOGRIPHY", "value": "true"}]
